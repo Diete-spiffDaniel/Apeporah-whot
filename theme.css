@@ -1,0 +1,251 @@
+@font-face {
+  font-family: "Fredoka";
+  src: url("./fonts/fredoka-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("./fonts/fredoka-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("./fonts/fredoka-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("./fonts/fredoka-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./fonts/nunito-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./fonts/nunito-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./fonts/nunito-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./fonts/nunito-latin-800-normal.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-heading: "Fredoka", "Segoe UI", sans-serif;
+  --font-body: "Nunito", "Segoe UI", sans-serif;
+  --base-bg: #0b3d2e;
+  --base-bg-2: #072a20;
+  --surface: rgba(14, 49, 39, 0.78);
+  --surface-strong: rgba(8, 30, 24, 0.9);
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-border: rgba(255, 255, 255, 0.18);
+  --panel-alt: rgba(255, 255, 255, 0.12);
+  --ink: #102d25;
+  --ink-soft: #265147;
+  --text-main: #f8f5ef;
+  --text-muted: #dbe9e1;
+  --gold: #f5b83d;
+  --gold-2: #f0c76a;
+  --gold-3: #d99d23;
+  --cream: #fff8e7;
+  --card-ink: #1a2925;
+  --card-surface: #fffaf0;
+  --success: #7ac87d;
+  --danger: #e65d4e;
+  --warning: #f8cb62;
+  --info: #6ab7d8;
+  --shape-circle: #d95f52;
+  --shape-triangle: #2c8f6d;
+  --shape-cross: #4b6cc2;
+  --shape-square: #d3873d;
+  --shape-star: #8f5fd0;
+  --theme-color: #0b3d2e;
+  --shadow-soft: 0 12px 28px rgba(3, 11, 10, 0.25);
+  --border-radius-xl: 24px;
+  --border-radius-lg: 18px;
+  --border-radius-md: 12px;
+  --card-width: clamp(62px, 18vw, 90px);
+  --card-height: calc(var(--card-width) * 1.4);
+}
+
+html[data-theme="classic"] {
+  --base-bg: #0b3d2e;
+  --base-bg-2: #072a20;
+  --surface: rgba(11, 61, 46, 0.7);
+  --surface-strong: rgba(7, 42, 32, 0.9);
+  --card-surface: #fff8e7;
+  --card-ink: #1e2f2c;
+  --text-main: #fdf7ef;
+  --text-muted: #dfeae4;
+  --gold: #f5b83d;
+  --gold-2: #f0c76a;
+  --gold-3: #d99d23;
+  --theme-color: #0b3d2e;
+  --panel: rgba(255, 255, 255, 0.05);
+  --panel-border: rgba(255, 255, 255, 0.18);
+  --button-ink: #1a2c27;
+  --felt-overlay: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 25%),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.06), transparent 18%),
+    linear-gradient(180deg, #0f493b 0%, var(--base-bg) 65%, var(--base-bg-2) 100%);
+}
+
+html[data-theme="lagos-night"] {
+  --base-bg: #0a1230;
+  --base-bg-2: #050b1c;
+  --surface: rgba(10, 18, 48, 0.78);
+  --surface-strong: rgba(7, 12, 31, 0.96);
+  --card-surface: #fff8ec;
+  --card-ink: #1c1d2a;
+  --text-main: #f4f0ff;
+  --text-muted: #dfe3ff;
+  --gold: #f5be4a;
+  --gold-2: #ffdd8d;
+  --gold-3: #d9952b;
+  --theme-color: #0a1230;
+  --panel: rgba(130, 106, 255, 0.08);
+  --panel-border: rgba(255, 205, 108, 0.3);
+  --button-ink: #20172f;
+  --felt-overlay: radial-gradient(circle at 50% 15%, rgba(240, 193, 98, 0.22), transparent 24%),
+    radial-gradient(circle at 80% 20%, rgba(203, 100, 136, 0.18), transparent 20%),
+    linear-gradient(180deg, #111d43 0%, var(--base-bg) 64%, var(--base-bg-2) 100%);
+}
+
+html[data-theme="harmattan-day"] {
+  --base-bg: #e9d8b8;
+  --base-bg-2: #d3bb8c;
+  --surface: rgba(236, 223, 190, 0.8);
+  --surface-strong: rgba(184, 147, 93, 0.8);
+  --card-surface: #ffffff;
+  --card-ink: #102c2b;
+  --text-main: #1d2c29;
+  --text-muted: #4d5b5a;
+  --gold: #c27b29;
+  --gold-2: #dba457;
+  --gold-3: #ab6422;
+  --theme-color: #e9d8b8;
+  --panel: rgba(255, 255, 255, 0.4);
+  --panel-border: rgba(28, 70, 59, 0.25);
+  --button-ink: #1b2d2a;
+  --felt-overlay: radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.5), transparent 18%),
+    linear-gradient(180deg, #f0e0bf 0%, var(--base-bg) 68%, var(--base-bg-2) 100%);
+}
+
+html {
+  background: var(--base-bg);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  color-scheme: dark;
+}
+
+html[data-theme="harmattan-day"] {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--felt-overlay);
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.08'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+  opacity: 0.7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+p,
+label,
+span,
+button,
+input,
+select {
+  font-family: var(--font-body);
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

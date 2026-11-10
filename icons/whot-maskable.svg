@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Whot maskable icon">
+  <defs>
+    <linearGradient id="mBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f3d77e"/>
+      <stop offset="100%" stop-color="#d88c31"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#mBg)"/>
+  <rect x="96" y="96" width="320" height="320" rx="60" fill="#1f4d3d"/>
+  <g fill="#f5edd9" font-family="Arial, sans-serif" font-weight="900" text-anchor="middle">
+    <text x="256" y="290" font-size="200">W</text>
+  </g>
+  <g fill="#efe8d8">
+    <circle cx="182" cy="182" r="34"/>
+    <circle cx="330" cy="182" r="34"/>
+    <circle cx="182" cy="330" r="34"/>
+    <circle cx="330" cy="330" r="34"/>
+  </g>
+</svg>

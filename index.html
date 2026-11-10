@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#123c2d">
+    <meta name="description" content="Whot! — a Nigerian card game built as a PWA">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/svg+xml" href="icons/whot-icon-192.svg">
+    <link rel="apple-touch-icon" href="icons/whot-icon-192.svg">
+    <title>Whot! — Nigerian Card Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <main id="app" class="app">
+      <header class="topbar">
+        <button class="brand" data-screen="home" aria-label="Go to home">WHOT<span>!</span></button>
+        <div class="top-actions">
+          <span class="wifi-chip" aria-label="WiFi status"><span class="status-dot"></span> Offline</span>
+          <button id="mute-button" class="icon-button" aria-label="Mute sounds">🔊</button>
+        </div>
+      </header>
+      <section id="screen" class="screen" aria-live="polite"></section>
+      <div id="modal-root"></div>
+      <div id="toast" class="toast" role="status"></div>
+    </main>
+  </body>
+</html>

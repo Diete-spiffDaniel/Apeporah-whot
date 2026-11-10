@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en" data-theme="classic">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b3d2e">
+    <title>Whot! Theme Preview</title>
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <script type="module" src="cards.js"></script>
+    <style>
+      body {
+        min-height: 100vh;
+        padding: 0;
+      }
+
+      .section {
+        margin-bottom: 1.2rem;
+      }
+
+      .swatch-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.8rem;
+      }
+
+      .swatch-card {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.04);
+      }
+
+      .swatch-color {
+        height: 70px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .swatch-label {
+        padding: 0.72rem 0.7rem 0.8rem;
+        font-size: 0.75rem;
+        font-weight: 800;
+      }
+
+      .card-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+        gap: 0.7rem;
+        align-items: center;
+      }
+
+      .card-gallery .card {
+        justify-self: center;
+      }
+
+      .table-demo {
+        border-radius: 30px;
+        padding: 0.9rem;
+        background: linear-gradient(180deg, rgba(11,61,46,0.78), rgba(7,42,32,0.86));
+        border: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .demo-players {
+        display: flex;
+        justify-content: center;
+        gap: 0.9rem;
+        flex-wrap: wrap;
+      }
+
+      .demo-player {
+        display: grid;
+        justify-items: center;
+        gap: 0.35rem;
+      }
+
+      .demo-avatar {
+        width: 2.8rem;
+        height: 2.8rem;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        border: 2px solid rgba(255,255,255,0.16);
+        background: rgba(255,255,255,0.12);
+        font-weight: 800;
+      }
+
+      .demo-middle {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        gap: 1rem;
+        padding: 1rem 0 0.75rem;
+      }
+
+      .demo-hand {
+        display: flex;
+        justify-content: center;
+        gap: 0.15rem;
+        overflow-x: auto;
+        padding: 0.4rem 0;
+      }
+
+      .demo-hand .card {
+        margin-left: -0.75rem;
+      }
+
+      .demo-hand .card:first-child {
+        margin-left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="preview-shell">
+      <header class="preview-header">
+        <div>
+          <div class="section-label">Theme preview</div>
+          <h1>WHOT<span class="header-mark">!</span></h1>
+        </div>
+        <div class="theme-switcher" aria-label="Theme switcher">
+          <button type="button" data-theme="classic" class="is-active">Classic Felt</button>
+          <button type="button" data-theme="lagos-night">Lagos Night</button>
+          <button type="button" data-theme="harmattan-day">Harmattan Day</button>
+        </div>
+      </header>
+
+      <div class="preview-grid">
+        <section class="panel section">
+          <div class="section-label"><span>Colour tokens</span></div>
+          <div class="swatch-grid" id="swatch-grid"></div>
+        </section>
+
+        <section class="panel section">
+          <div class="section-label"><span>Buttons & controls</span></div>
+          <div class="button-row">
+            <button class="btn btn--primary" type="button">Primary action</button>
+            <button class="btn btn--secondary" type="button">Secondary</button>
+            <button class="btn btn--outline-cream" type="button">Cream</button>
+          </div>
+          <div style="margin-top: 1rem; display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: center;">
+            <div class="segmented" aria-label="Difficulty selector">
+              <button type="button" class="is-active">Easy</button>
+              <button type="button">Normal</button>
+              <button type="button">Hard</button>
+            </div>
+            <button class="toggle is-on" type="button" aria-label="Toggle sound"></button>
+            <span class="wifi-chip"><span class="wifi-chip__dot"></span> WiFi OK</span>
+          </div>
+        </section>
+
+        <section class="panel section">
+          <div class="section-label"><span>Banners</span></div>
+          <div style="display:grid; gap:0.8rem;">
+            <div class="banner">Pick Two!</div>
+            <div class="banner">Last card!</div>
+            <div class="banner banner--win">Check up!</div>
+            <div class="banner banner--alert">General Market!</div>
+          </div>
+        </section>
+
+        <section class="panel section">
+          <div class="section-label"><span>Shape picker</span></div>
+          <div class="shape-picker" id="shape-picker"></div>
+        </section>
+
+        <section class="panel section">
+          <div class="section-label"><span>Card back</span></div>
+          <div id="card-back-demo" style="display:flex; justify-content:center;"></div>
+        </section>
+
+        <section class="panel section">
+          <div class="section-label"><span>54 card deck</span></div>
+          <div class="card-gallery" id="card-gallery"></div>
+        </section>
+
+        <section class="panel section">
+          <div class="section-label"><span>Sample table</span></div>
+          <div class="table-demo">
+            <div class="demo-players">
+              <div class="demo-player is-active">
+                <div class="demo-avatar" style="background:linear-gradient(135deg,#fbd784,#f5b83d); color:#1d2c29;">C</div>
+                <strong>Chidi</strong>
+              </div>
+              <div class="demo-player">
+                <div class="demo-avatar" style="background:linear-gradient(135deg,#dff8d3,#7ac87d); color:#153226;">A</div>
+                <strong>Amaka</strong>
+              </div>
+              <div class="demo-player">
+                <div class="demo-avatar" style="background:linear-gradient(135deg,#ffc2d2,#ea6e9d); color:#1f1b32;">T</div>
+                <strong>Tunde</strong>
+              </div>
+            </div>
+            <div class="demo-middle">
+              <div class="pile-stack">
+                <div class="card card--back" aria-label="Card back"></div>
+                <small>Market</small>
+              </div>
+              <div class="pile-stack">
+                <div class="card" data-shape="star" data-number="5" data-state="playable" aria-label="5 of stars"></div>
+                <small>Discard</small>
+              </div>
+            </div>
+            <div class="demo-hand" id="demo-hand"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module">
+      import { buildCard, buildCardBack, getCardData } from "./cards.js";
+
+      const palette = [
+        ["Base green", "#0b3d2e"],
+        ["Felt deep", "#072a20"],
+        ["Gold", "#f5b83d"],
+        ["Cream", "#fff8e7"],
+        ["Circle", "#d95f52"],
+        ["Triangle", "#2c8f6d"],
+        ["Cross", "#4b6cc2"],
+        ["Square", "#d3873d"],
+        ["Star", "#8f5fd0"],
+        ["Ink", "#1c2d29"],
+      ];
+
+      const swatchGrid = document.getElementById("swatch-grid");
+      palette.forEach(([label, value]) => {
+        const item = document.createElement("div");
+        item.className = "swatch-card";
+        item.innerHTML = `
+          <div class="swatch-color" style="background:${value};"></div>
+          <div class="swatch-label"><strong>${label}</strong><br>${value}</div>
+        `;
+        swatchGrid.appendChild(item);
+      });
+
+      const shapeNames = ["circle", "triangle", "cross", "square", "star"];
+      const shapePicker = document.getElementById("shape-picker");
+      shapeNames.forEach((shape) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "shape-option";
+        button.innerHTML = `<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#shape-${shape}"></use></svg><span>${shape}</span>`;
+        shapePicker.appendChild(button);
+      });
+
+      const cardGallery = document.getElementById("card-gallery");
+      getCardData().forEach((card) => {
+        cardGallery.appendChild(buildCard(card));
+      });
+
+      const backDemo = document.getElementById("card-back-demo");
+      backDemo.appendChild(buildCardBack({ state: "playable" }));
+
+      const demoHand = document.getElementById("demo-hand");
+      [
+        { shape: "circle", number: 7 },
+        { shape: "triangle", number: 11 },
+        { shape: "star", number: 5 },
+        { shape: "square", number: 13 },
+        { shape: "cross", number: 2 },
+        { shape: "whot", number: 20 }
+      ].forEach((card) => {
+        demoHand.appendChild(buildCard({ ...card, state: "playable" }));
+      });
+
+      function setTheme(theme) {
+        document.documentElement.dataset.theme = theme;
+        const meta = document.querySelector('meta[name="theme-color"]');
+        meta.setAttribute("content", getComputedStyle(document.documentElement).getPropertyValue("--theme-color").trim());
+        document.querySelectorAll("[data-theme]").forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.theme === theme);
+        });
+      }
+
+      document.querySelectorAll("[data-theme]").forEach((button) => {
+        button.addEventListener("click", () => setTheme(button.dataset.theme));
+      });
+    </script>
+  </body>
+</html>
